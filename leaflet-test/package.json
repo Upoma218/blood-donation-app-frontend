@@ -1,0 +1,9 @@
+{
+  "name": "leaflet-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1"
+  }
+}
