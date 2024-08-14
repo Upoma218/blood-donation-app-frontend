@@ -22,7 +22,7 @@ const SearchDonar = async () => {
         <SearchButton></SearchButton>
       </div>
       <div className="my-12 text-center divider divider-error">
-        <h1 className="text-2xl font-bold border-2 border-red-700 text-cyan-400 p-3 inline-block bg-white bg-opacity-75">
+        <h1 className="text-2xl font-bold border-2 border-red-700 text-teal-500 p-3 inline-block bg-white bg-opacity-75">
           Our Available Donors
         </h1>
       </div>
@@ -33,7 +33,7 @@ const SearchDonar = async () => {
       </div>
       <div>
         <Link href="/donors">
-          <button className="btn text-white bg-cyan-400 font-bold">
+          <button className="btn text-white bg-teal-500 font-bold">
             View All Donors
           </button>
         </Link>

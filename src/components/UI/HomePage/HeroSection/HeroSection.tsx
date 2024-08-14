@@ -23,7 +23,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold my-3 text-teal-500">
             Your <span className="text-red-600">Blood</span> Matters!
           </h1>
-          <p className="my-5">
+          <p className="my-5 text-black">
             Every drop counts in the journey of hope. Be the beacon of light for
             someone in their darkest hour. Your blood donation is not just a
             gesture; it's a lifeline. Join us in this noble mission to save

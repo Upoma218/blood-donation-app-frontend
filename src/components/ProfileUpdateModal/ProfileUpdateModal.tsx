@@ -88,7 +88,7 @@ const ProfileUpdateModal: React.FC<ProfileUpdateModalProps> = ({
       onClose={handleCloseModal}
       content={
         <div className="text-gray-700">
-          <h1 className="text-3xl font-semibold text-cyan-400 my-4">
+          <h1 className="text-3xl font-semibold text-teal-500 my-4">
             Update Profile
           </h1>
           <DBForm onSubmit={handleFormSubmit}>

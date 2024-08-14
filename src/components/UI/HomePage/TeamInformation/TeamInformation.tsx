@@ -1,6 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 
-import bgImage from "@/assets/BloodDrop.png";
 import member1Photo from "@/assets/perosn1.jpg";
 import member2Photo from "@/assets/perosn2.jpg";
 import member3Photo from "@/assets/perosn3.jpg";
@@ -36,18 +36,17 @@ const TeamInformation = () => {
   ];
 
   return (
-    <div
-      className="relative py-4 bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage.src})` }}
-    >
-      <div className="absolute inset-0 bg-white bg-opacity-90"></div>
+    <div className="relative py-4 bg-cover bg-center">
       <div className="relative z-10">
-        <div className="my-12 text-center divider divider-error">
-          <h1 className="text-2xl font-bold border-2 border-red-700 text-cyan-400 p-3 inline-block bg-white bg-opacity-75">
-            Meet Our Team
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center mb-6">
+          Meet Our Team
+        </h1>
+        <p className="mb-6 mx-auto max-w-6xl w-2/3 text-center text-black">
+          Meet the faces behind our achievements. Our diverse team is united by
+          a common goal to deliver excellence. Explore the team that's shaping
+          the future. Each member is passionate about creating positive change.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8 bg-teal-50 py-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="w-32 h-32 rounded-full overflow-hidden relative">
@@ -59,7 +58,9 @@ const TeamInformation = () => {
                   className="rounded-full"
                 />
               </div>
-              <h3 className="text-lg font-semibold mt-2">{member.name}</h3>
+              <h3 className="text-lg font-semibold mt-2 text-black">
+                {member.name}
+              </h3>
               <p className="text-sm text-gray-600">{member.position}</p>
             </div>
           ))}

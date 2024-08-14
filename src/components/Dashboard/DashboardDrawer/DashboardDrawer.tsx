@@ -18,7 +18,7 @@ const DashboardDrawer = ({ children }: { children: ReactNode }) => {
       <div className="drawer-content  w-full">
         <label
           htmlFor="my-drawer-2"
-          className="btn bg-cyan-400 drawer-button lg:hidden absolute top-1 left-1 btn-xs text-white"
+          className="btn bg-teal-500 drawer-button lg:hidden absolute top-1 left-1 btn-xs text-white"
         >
           <FaBars size={16} />
         </label>

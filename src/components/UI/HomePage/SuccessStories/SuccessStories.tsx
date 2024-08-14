@@ -61,7 +61,7 @@ const SuccessStories = () => {
       <div className="absolute inset-0 bg-white bg-opacity-90"></div>
       <div className="relative z-10">
         <div className="my-12 text-center divider divider-error">
-          <h1 className="text-xs md:text-2xl font-bold border-2 border-red-700 text-cyan-400 p-3 inline-block bg-white bg-opacity-75">
+          <h1 className="text-xs md:text-2xl font-bold border-2 border-red-700 text-teal-500 p-3 inline-block bg-white bg-opacity-75">
             Some of Our Success Stories
           </h1>
         </div>
@@ -69,7 +69,7 @@ const SuccessStories = () => {
           {stories.map((story, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg bg-cyan-400 text-white shadow-xl"
+              className="p-6 rounded-lg bg-teal-500 text-white shadow-xl"
             >
               <div className=" grid grid-cols-1 md:grid-cols-2 items-center">
                 <div className="flex flex-col items-center">

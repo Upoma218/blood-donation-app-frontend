@@ -21,7 +21,7 @@ const SearchButton = () => {
         />
       </div>
       <div className="mb-2 md:mb-0">
-        <label htmlFor="genre" className="sr-only">
+        <label htmlFor="genre" className="sr-only text-black">
           Select Genre
         </label>
         <select

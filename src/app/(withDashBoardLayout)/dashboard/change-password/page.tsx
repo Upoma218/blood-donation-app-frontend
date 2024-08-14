@@ -56,7 +56,7 @@ const ChangePassword = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-white p-8 w-full">
       <div className="max-w-2xl w-full bg-pink-100 shadow-md rounded-md p-8 text-center">
-        <h1 className="text-3xl font-semi text-cyan-400 mb-4">
+        <h1 className="text-3xl font-semi text-teal-500 mb-4">
           Change Password
         </h1>
         {error && (
@@ -99,7 +99,7 @@ const ChangePassword = () => {
           </div>
           <button
             type="submit"
-            className="btn bg-cyan-400 w-full mb-4 text-white font-bold"
+            className="btn bg-teal-500 w-full mb-4 text-white font-bold"
           >
             Change Password
           </button>
