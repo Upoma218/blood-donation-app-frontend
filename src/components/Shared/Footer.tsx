@@ -13,7 +13,7 @@ import { RiUserFollowFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-red-700 text-white">
+    <footer className="footer p-10 bg-cyan-400 text-white">
       <aside>
         <Image
           src={AppLogo}
@@ -72,21 +72,21 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaFacebook className="text-xl hover:text-red-700 transition duration-300" />
+                    <FaFacebook className="text-xl hover:text-cyan-400 transition duration-300" />
                   </Link>
                   <Link
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaTwitter className="text-xl hover:text-red-700 transition duration-300" />
+                    <FaTwitter className="text-xl hover:text-cyan-400 transition duration-300" />
                   </Link>
                   <Link
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaInstagram className="text-xl hover:text-red-700 transition duration-300" />
+                    <FaInstagram className="text-xl hover:text-cyan-400 transition duration-300" />
                   </Link>
                 </div>
               </div>

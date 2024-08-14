@@ -96,7 +96,7 @@ const RegisterPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-pink-100 p-8">
       <div className="max-w-2xl w-full bg-white shadow-md rounded-md p-8 text-center">
-        <h1 className="text-3xl font-semibold text-red-700 bg-white mb-4">
+        <h1 className="text-3xl font-semibold text-cyan-400 bg-white mb-4">
           Register To Donate Blood
         </h1>
         {error && (
@@ -219,7 +219,7 @@ const RegisterPage = () => {
           </p>
           <button
             type="submit"
-            className="btn bg-red-700 w-full mb-4 text-white font-bold"
+            className="btn bg-cyan-400 w-full mb-4 text-white font-bold"
           >
             Register
           </button>

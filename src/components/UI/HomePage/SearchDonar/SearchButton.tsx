@@ -12,7 +12,7 @@ const SearchButton = () => {
     router.push(`/donors?filterType=${filterType}&filterValue=${filterValue}`);
   };
   return (
-    <div className="join flex flex-col md:flex-row md:items-center mb-6">
+    <div className="join flex flex-col md:flex-row md:items-center">
       <div className="mb-2 md:mb-0">
         <input
           className="input input-bordered join-item"
@@ -41,7 +41,7 @@ const SearchButton = () => {
       </div>
       <div>
         <button
-          className="btn bg-red-700 text-white font-bold join-item"
+          className="btn bg-teal-500 text-white font-bold join-item"
           onClick={onSearchHandler}
         >
           Search

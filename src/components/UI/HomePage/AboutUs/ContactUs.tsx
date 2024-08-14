@@ -30,11 +30,11 @@ const ContactUs = () => {
           </figure>
           <div className="card-body w-full lg:w-1/2 p-6 lg:p-12">
             <div className="divider divider-error mb-4">
-              <h2 className="text-xl lg:text-xl font-semibold text-red-700 p-1 border-2 border-red-700">
+              <h2 className="text-xl lg:text-xl font-semibold text-cyan-400 p-1 border-2 border-red-700">
                 Contact Information
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3 text-white bg-red-700 p-6 rounded-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3 text-white bg-cyan-400 p-6 rounded-md">
               <div className="flex items-center mb-4">
                 <FaEnvelope className="text-2xl mr-3" />
                 <div>
@@ -66,21 +66,21 @@ const ContactUs = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaFacebook className="text-3xl hover:text-red-700 transition duration-300" />
+                      <FaFacebook className="text-3xl hover:text-cyan-400 transition duration-300" />
                     </Link>
                     <Link
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaTwitter className="text-3xl hover:text-red-700 transition duration-300" />
+                      <FaTwitter className="text-3xl hover:text-cyan-400 transition duration-300" />
                     </Link>
                     <Link
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaInstagram className="text-3xl hover:text-red-700 transition duration-300" />
+                      <FaInstagram className="text-3xl hover:text-cyan-400 transition duration-300" />
                     </Link>
                   </div>
                 </div>

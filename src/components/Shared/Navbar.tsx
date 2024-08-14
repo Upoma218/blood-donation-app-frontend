@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar px-2 md:px-8  lg:px-16 bg-red-700">
+    <div className="navbar px-2 md:px-8  lg:px-16 bg-teal-500">
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost">
@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
         <Link href="/">
           <h1 className="text-md lg:text-2xl md:text-xl sm:text-lg text-white font-bold">
-            Donate Blood
+            Donate <span className="text-red-600">Blood</span>
           </h1>
         </Link>
       </div>
@@ -92,7 +92,11 @@ const Navbar = () => {
           <p className="text-sm lg:text-lg md:text-md sm:text-sm text-white font-bold">
             {userInfo?.email}
           </p>
-        ) : null}
+        ) : (
+          <p className="text-white text-xs">
+            Login credintials has given to the login page for testing!
+          </p>
+        )}
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}

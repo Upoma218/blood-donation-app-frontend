@@ -48,9 +48,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className=" flex h-screen items-center justify-center bg-pink-100">
+    <div className=" flex min-h-screen items-center justify-center bg-pink-100 py-6">
       <div className="max-w-md w-full bg-white shadow-md rounded-md p-8 text-center border-4 border-pink-100">
-        <h1 className="text-3xl font-semi text-red-700 bg-white mb-4">
+        <h1 className="text-3xl font-semi text-cyan-400 bg-white mb-4">
           Login To Donate Blood
         </h1>
         {error && (
@@ -84,7 +84,7 @@ const LoginPage = () => {
 
             <button
               type="submit"
-              className="btn bg-red-700 w-full mb-4 text-white font-bold"
+              className="btn bg-cyan-400 w-full mb-4 text-white font-bold"
             >
               Login
             </button>
@@ -93,6 +93,16 @@ const LoginPage = () => {
               <Link href="/register" className="link text-pink-500">
                 Create an account
               </Link>
+            </p>
+            <p className="text-sm text-left bg-slate-200 p-4 my-4">
+              <span className="text-pink-500 font-bold text-md">
+                You can test the functionalities by using these credintials for
+                different users: <br />
+              </span>{" "}
+              admin: <br /> email: admin@gmail.com, password: admin123 <br />
+              donor: <br /> email: donor@gmail.com, password: donor123 <br />
+              requester: <br /> email: requester@gmail.com, password:
+              requester123
             </p>
           </DBForm>
         </FormProvider>

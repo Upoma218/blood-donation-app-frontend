@@ -14,7 +14,7 @@ import {
 const AboutUs = () => {
   return (
     <div>
-      <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-red-700 text-center">
+      <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-cyan-400 text-center">
         About Us
       </h1>
       <p className="mb-6 mx-auto max-w-6xl w-2/3 text-center">

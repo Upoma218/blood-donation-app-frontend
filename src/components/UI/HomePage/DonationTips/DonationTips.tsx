@@ -12,14 +12,14 @@ const DonationTips = () => {
   return (
     <div className="mt-6">
       <div className="my-12 text-center divider divider-error">
-        <h1 className="text-2xl font-bold border-2 border-red-700 text-red-700 p-3 inline-block bg-white bg-opacity-75">
+        <h1 className="text-2xl font-bold border-2 border-red-700 text-cyan-400 p-3 inline-block bg-white bg-opacity-75">
           Donation Tips
         </h1>
       </div>
       <div className=" bg-pink-100 p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-6xl">
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-700 mb-2">
+            <div className="text-4xl text-cyan-400 mb-2">
               <FaHandsHelping />
             </div>
             <p className="text-lg">
@@ -28,7 +28,7 @@ const DonationTips = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-700 mb-2">
+            <div className="text-4xl text-cyan-400 mb-2">
               <FaHandHoldingHeart />
             </div>
             <p className="text-lg">
@@ -37,7 +37,7 @@ const DonationTips = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-700 mb-2">
+            <div className="text-4xl text-cyan-400 mb-2">
               <FaArrowRight />
             </div>
             <p className="text-lg">
@@ -46,7 +46,7 @@ const DonationTips = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-700 mb-2">
+            <div className="text-4xl text-cyan-400 mb-2">
               <FaBed />
             </div>
             <p className="text-lg">
@@ -55,7 +55,7 @@ const DonationTips = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-700 mb-2">
+            <div className="text-4xl text-cyan-400 mb-2">
               <FaHeartbeat />
             </div>
             <p className="text-lg">
@@ -64,7 +64,7 @@ const DonationTips = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-700 mb-2">
+            <div className="text-4xl text-cyan-400 mb-2">
               <FaStar />
             </div>
             <p className="text-lg">

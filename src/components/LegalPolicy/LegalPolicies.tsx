@@ -1,12 +1,12 @@
 const LegalPolicies = () => {
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-4xl font-semibold text-center text-red-700 mb-8">
+      <h1 className="text-4xl font-semibold text-center text-cyan-400 mb-8">
         Legal Policies
       </h1>
       <div className="max-w-3xl mx-auto">
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-red-700 mb-4">
+          <h2 className="text-2xl font-semibold text-cyan-400 mb-4">
             Terms and Conditions
           </h2>
           <p className="text-lg mb-4">
@@ -28,7 +28,7 @@ const LegalPolicies = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-red-700 mb-4">
+          <h2 className="text-2xl font-semibold text-cyan-400 mb-4">
             Privacy Policy
           </h2>
           <p className="text-lg mb-4">
@@ -51,7 +51,7 @@ const LegalPolicies = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-red-700 mb-4">
+          <h2 className="text-2xl font-semibold text-cyan-400 mb-4">
             Cookie Policy
           </h2>
           <p className="text-lg mb-4">

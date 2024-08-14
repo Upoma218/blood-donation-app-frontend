@@ -91,7 +91,7 @@ const DonorsListPage = () => {
             </div>
             <div>
               <button
-                className="btn bg-red-700 text-white font-bold join-item"
+                className="btn bg-cyan-400 text-white font-bold join-item"
                 onClick={onSearchHandler}
               >
                 Search
@@ -100,7 +100,7 @@ const DonorsListPage = () => {
           </div>
         </div>
         <div className="my-12 text-center divider divider-error">
-          <h1 className="text-2xl font-bold border-2 border-red-700 text-red-700 p-3 inline-block bg-white bg-opacity-75">
+          <h1 className="text-2xl font-bold border-2 border-red-700 text-cyan-400 p-3 inline-block bg-white bg-opacity-75">
             Our Available Donors
           </h1>
         </div>

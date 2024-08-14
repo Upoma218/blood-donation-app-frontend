@@ -43,7 +43,7 @@ const TeamInformation = () => {
       <div className="absolute inset-0 bg-white bg-opacity-90"></div>
       <div className="relative z-10">
         <div className="my-12 text-center divider divider-error">
-          <h1 className="text-2xl font-bold border-2 border-red-700 text-red-700 p-3 inline-block bg-white bg-opacity-75">
+          <h1 className="text-2xl font-bold border-2 border-red-700 text-cyan-400 p-3 inline-block bg-white bg-opacity-75">
             Meet Our Team
           </h1>
         </div>
