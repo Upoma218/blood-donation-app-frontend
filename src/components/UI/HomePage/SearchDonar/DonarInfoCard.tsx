@@ -1,4 +1,6 @@
+import profileImg from "@/assets/profile.png";
 import { Donor } from "@/types";
+import Image from "next/image";
 import Link from "next/link";
 
 const DonarInfoCard = ({ donor }: { donor: Donor }) => {
@@ -8,29 +10,32 @@ const DonarInfoCard = ({ donor }: { donor: Donor }) => {
 
   return (
     <>
-      <div className="card mb-4 rounded-sm shadow-lg shadow-slate-300 bg-pink-100">
-        <div className="card-body items-center text-center">
-          <h2 className="card-title text-teal-500">
+      <div className="card card-side shadow-xl">
+        <figure>
+          <Image src={profileImg} alt="profile" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
             Donor Name:{" "}
             <span className="font-bold text-gray-800">{donor?.name}</span>
           </h2>
-          <p className="font-bold text-teal-500 text-sm">
+          <p>
+            {" "}
             Blood Type:{" "}
             <span className="font-normal text-gray-800">
               {donor?.bloodType}
             </span>
           </p>
-          <p className="font-bold text-teal-500 text-sm">
+          <p>
             Availability Status:{" "}
             <span className="font-normal text-gray-800">
               {availabilityStatus}
             </span>
           </p>
-          <p className="font-bold text-teal-500 text-sm">
+          <p>
             Location:{" "}
             <span className="font-normal text-gray-800">{donor?.location}</span>
           </p>
-
           <div className="card-actions justify-end">
             <Link href={`/donors/${donor.id}`}>
               <button className="btn text-white bg-teal-500 font-bold btn-sm">

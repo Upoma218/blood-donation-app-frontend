@@ -1,4 +1,5 @@
 import AboutUs from "@/components/UI/HomePage/AboutUs/AboutUs";
+import ContactUs from "@/components/UI/HomePage/AboutUs/ContactUs";
 import CovarageArea from "@/components/UI/HomePage/CovarageArea/CovarageArea";
 import DonationTips from "@/components/UI/HomePage/DonationTips/DonationTips";
 import HeroSection from "@/components/UI/HomePage/HeroSection/HeroSection";
@@ -15,6 +16,7 @@ const HomePage = () => {
       <SearchDonar></SearchDonar>
       <DonationTips></DonationTips>
       <SuccessStories></SuccessStories>
+      <ContactUs></ContactUs>
       <CovarageArea></CovarageArea>
     </>
   );

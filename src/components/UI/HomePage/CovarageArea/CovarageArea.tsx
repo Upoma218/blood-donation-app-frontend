@@ -130,11 +130,9 @@ const CovarageArea = () => {
 
   return (
     <div>
-      <div className="my-12 text-center divider divider-error">
-        <h1 className="text-2xl font-bold border-2 border-red-700 text-teal-500 p-3 inline-block bg-white bg-opacity-75">
-          Our Coverage Areas!
-        </h1>
-      </div>
+      <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
+        Our Coverage Areas!
+      </h1>
 
       <div className="mb-6 mx-auto max-w-6xl text-center px-4">
         <p>
@@ -145,7 +143,7 @@ const CovarageArea = () => {
           <span>
             <button
               onClick={handleToggle}
-              className="text-pink-500 mt-2 cursor-pointer"
+              className="text-teal-500 mt-2 cursor-pointer"
             >
               {isExpanded ? "Read Less" : "Read More..."}
             </button>

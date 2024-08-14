@@ -13,12 +13,12 @@ import { RiUserFollowFill } from "react-icons/ri";
 
 const ContactUs = () => {
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-100 to-red-200">
+    <div className="w-full pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold text-red-600 text-center mb-12">
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
           Contact Us
         </h1>
-        <div className="card card-side bg-base-100 shadow-xl flex flex-col lg:flex-row mx-auto">
+        <div className="card card-side bg-gradient-to-r from-teal-100 to-red-teal shadow-xl flex flex-col lg:flex-row mx-auto">
           <figure className="w-1/4">
             <Image
               src={contactImage}
@@ -29,8 +29,8 @@ const ContactUs = () => {
             />
           </figure>
           <div className="card-body w-full lg:w-1/2 p-6 lg:p-12">
-            <div className="divider divider-error mb-4">
-              <h2 className="text-xl lg:text-xl font-semibold text-teal-500 p-1 border-2 border-red-700">
+            <div className="divider divider-accent mb-4">
+              <h2 className="text-xl lg:text-xl font-semibold text-teal-500 p-1 border-2 border-teal-500">
                 Contact Information
               </h2>
             </div>

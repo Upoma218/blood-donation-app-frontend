@@ -36,7 +36,7 @@ const TeamInformation = () => {
   ];
 
   return (
-    <div className="relative py-4 bg-cover bg-center">
+    <div className="relative bg-cover bg-center">
       <div className="relative z-10">
         <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center mb-6">
           Meet Our Team

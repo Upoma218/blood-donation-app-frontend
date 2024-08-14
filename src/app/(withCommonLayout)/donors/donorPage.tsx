@@ -59,7 +59,7 @@ const DonorsListPage = () => {
     <div>
       <div className="flex flex-col items-center">
         <div className=" mt-6">
-          <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-red-600 text-center">
+          <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
             Search Donor Here!
           </h1>
           <div className="join flex flex-col md:flex-row md:items-center mb-6">
@@ -99,12 +99,10 @@ const DonorsListPage = () => {
             </div>
           </div>
         </div>
-        <div className="my-12 text-center divider divider-error">
-          <h1 className="text-2xl font-bold border-2 border-red-700 text-teal-500 p-3 inline-block bg-white bg-opacity-75">
-            Our Available Donors
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-6 mx-12">
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
+          Our Available Donors
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 mx-12">
           {donors?.map((donor: Donor) => (
             <DonarInfoCard key={donor.id} donor={donor}></DonarInfoCard>
           ))}

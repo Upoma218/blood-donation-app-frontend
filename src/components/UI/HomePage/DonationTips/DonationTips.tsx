@@ -11,12 +11,10 @@ import {
 const DonationTips = () => {
   return (
     <div className="mt-6">
-      <div className="my-12 text-center divider divider-error">
-        <h1 className="text-2xl font-bold border-2 border-red-700 text-teal-500 p-3 inline-block bg-white bg-opacity-75">
-          Donation Tips
-        </h1>
-      </div>
-      <div className=" bg-pink-100 p-6">
+      <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
+        Donation Tips
+      </h1>
+      <div className=" bg-teal-50 p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-6xl">
           <div className="flex flex-col items-center">
             <div className="text-4xl text-teal-500 mb-2">

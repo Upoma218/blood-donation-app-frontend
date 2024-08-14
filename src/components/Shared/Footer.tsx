@@ -13,40 +13,42 @@ import { RiUserFollowFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-teal-500 text-white">
+    <footer className="footer p-10 bg-gradient-to-br from-teal-600 to-teal-800 text-white">
       <aside>
         <Image
           src={AppLogo}
           alt="Logo"
           height={50}
           width={50}
-          className="bg-pink-100 rounded-full"
+          className="bg-white rounded-full"
         />
-        <p className="font-bold text-2xl text-yellow-400">Donate Blood</p>
+        <p className="font-bold text-2xl text-white">
+          Donate <span className="text-red-600">Blood</span>
+        </p>
         <p>
           Life is in Your Veins: Share It! Be The Lifeline! <br /> Donate Blood,
           Save Lives!
         </p>
 
-        <p className="text-center font-semibold mt-1 text-yellow-400">
+        <p className="text-center font-semibold mt-1 text-white">
           Copyright © 2024 - All right reserved By Donate Blood
         </p>
       </aside>
       <nav>
-        <h6 className="font-bold text-2xl text-yellow-400  mb-3">
+        <h6 className="font-bold text-2xl text-white  mb-3">
           Contact Information
         </h6>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
             <div className="flex items-center mb-4">
-              <FaEnvelope className="text-xl mr-3 text-yellow-400" />
+              <FaEnvelope className="text-xl mr-3 text-white" />
               <div>
                 <h3 className="font-semibold">Email:</h3>
                 <p>contact@ourorganization.com</p>
               </div>
             </div>
             <div className="flex items-center mb-4">
-              <FaPhone className="text-xl mr-3 text-yellow-400" />
+              <FaPhone className="text-xl mr-3 text-white" />
               <div>
                 <h3 className="font-semibold">Phone:</h3>
                 <p>+880123456789</p>
@@ -56,14 +58,14 @@ const Footer = () => {
           <div>
             {" "}
             <div className="flex items-center mb-4">
-              <FaMapMarkerAlt className="text-xl mr-3 text-yellow-400" />
+              <FaMapMarkerAlt className="text-xl mr-3 text-white" />
               <div>
                 <h3 className="font-semibold">Address:</h3>
                 <p>123 Donation St, Dhaka, Bangladesh</p>
               </div>
             </div>
             <div className="flex items-center mb-4">
-              <RiUserFollowFill className="text-xl mr-3 text-yellow-400" />
+              <RiUserFollowFill className="text-xl mr-3 text-white" />
               <div>
                 <h3 className="font-semibold">Follow Us:</h3>
                 <div className="flex space-x-4 mt-2">
@@ -95,7 +97,7 @@ const Footer = () => {
         </div>
       </nav>
       <nav>
-        <h6 className="font-bold text-2xl text-yellow-400 mb-3">Legal</h6>
+        <h6 className="font-bold text-2xl text-white mb-3">Legal</h6>
         <Link href="/terms" className="link link-hover">
           Terms of use
         </Link>

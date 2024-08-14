@@ -33,7 +33,7 @@ const AboutUs = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-6xl">
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaHandsHelping />
             </div>
             <p className="text-lg">
@@ -41,7 +41,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaHeart />
             </div>
             <p className="text-lg">
@@ -49,19 +49,19 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaBookOpen />
             </div>
             <p className="text-lg">Facilitate the donation process.</p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaUsers />
             </div>
             <p className="text-lg">Create a positive impact on lives.</p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaLightbulb />
             </div>
             <p className="text-lg">
@@ -69,7 +69,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaGlobe />
             </div>
             <p className="text-lg">
@@ -77,7 +77,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaMedal />
             </div>
             <p className="text-lg">
@@ -85,7 +85,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaStar />
             </div>
             <p className="text-lg">
@@ -93,7 +93,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-4xl text-red-500 mb-2">
+            <div className="text-4xl text-white mb-2">
               <FaSun />
             </div>
             <p className="text-lg">Bring light and hope to those in need.</p>

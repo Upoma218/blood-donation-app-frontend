@@ -57,14 +57,12 @@ const SuccessStories = () => {
   ];
 
   return (
-    <div className="relative py-6 bg-cover bg-center ">
+    <div className="relative bg-cover bg-center ">
       <div className="absolute inset-0 bg-white bg-opacity-90"></div>
       <div className="relative z-10">
-        <div className="my-12 text-center divider divider-error">
-          <h1 className="text-xs md:text-2xl font-bold border-2 border-red-700 text-teal-500 p-3 inline-block bg-white bg-opacity-75">
-            Some of Our Success Stories
-          </h1>
-        </div>
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
+          Some Of Our Success Stories
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8">
           {stories.map((story, index) => (
             <div
@@ -92,11 +90,11 @@ const SuccessStories = () => {
                 <div className="text-center md:text-left">
                   <p className="mb-4">{story.story}</p>
                   <div className="flex justify-center md:justify-start">
-                    <FaStar className="text-yellow-400" />
-                    <FaStar className="text-yellow-400" />
-                    <FaStar className="text-yellow-400" />
-                    <FaStar className="text-yellow-400" />
-                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-white" />
+                    <FaStar className="text-white" />
+                    <FaStar className="text-white" />
+                    <FaStar className="text-white" />
+                    <FaStar className="text-white" />
                   </div>
                 </div>
               </div>
