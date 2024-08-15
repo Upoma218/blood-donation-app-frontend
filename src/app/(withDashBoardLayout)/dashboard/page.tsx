@@ -15,7 +15,7 @@ const MyProfile = () => {
   console.log(isLoading);
 
   return (
-    <div className="w-full bg-teal-700 min-h-screen">
+    <div className="w-full flex flex-col bg-teal-700 min-h-screen">
       <div className="w-full bg-teal-950 p-6 shadow-md shadow-zinc-900 rounded-none mx-auto">
         <div className="relative rounded-md mx-auto w-32 h-32 flex justify-center items-center">
           <Image
@@ -73,9 +73,9 @@ const MyProfile = () => {
       </div>
 
       {/* Update Profile button */}
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center">
         <button
-          className="mx-6 p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md font-bold text-white w-full"
+          className="mx-6 p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md font-bold text-white w-full mb-3"
           onClick={() => setIsOpen(true)}
         >
           Update Profile
