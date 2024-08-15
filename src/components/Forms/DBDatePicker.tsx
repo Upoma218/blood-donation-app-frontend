@@ -15,7 +15,7 @@ interface IDatePicker {
 
 const DBDatePicker = ({
   name,
-  size = "small",
+  size = "medium",
   label,
   required,
   fullWidth = true,
@@ -32,7 +32,7 @@ const DBDatePicker = ({
         <div className={`form-control ${fullWidth ? "w-full" : "w-auto"}`}>
           {label && (
             <label className="label">
-              <span className="label-text text-white">{label}</span>
+              <span className="label-text text-teal-500">{label}</span>
             </label>
           )}
           <DatePicker
@@ -40,7 +40,7 @@ const DBDatePicker = ({
             onChange={onChange}
             value={value}
             required={required}
-            className={`input input-bordered bg-teal-900${
+            className={`input input-bordered ${
               size === "medium" ? "input-md" : "input-sm"
             } ${isError ? "input-error" : ""}`}
           />

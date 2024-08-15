@@ -14,7 +14,7 @@ const DBSelectField = ({
   items,
   name,
   label,
-  size = "small",
+  size = "medium",
   required,
   fullWidth = true,
 }: ITextField) => {
@@ -29,7 +29,7 @@ const DBSelectField = ({
         <div className={`form-control ${fullWidth ? "w-full" : "w-auto"}`}>
           {label && (
             <label className="label">
-              <span className="label-text">{label}</span>
+              <span className="label-text text-teal-500">{label}</span>
             </label>
           )}
           <select

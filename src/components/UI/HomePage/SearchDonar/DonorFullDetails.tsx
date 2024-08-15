@@ -21,9 +21,9 @@ const DonorFullDetails = ({ donor }: { donor: Donor }) => {
 
   return (
     <div className="p-4 justify-center align-middle">
-      <div className="card shadow-xl text-black">
+      <div className="card text-black">
         <figure>
-          <Image src={profileImg} alt="profile" />
+          <Image src={profileImg} alt="profile" className="w-48" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">

@@ -53,6 +53,7 @@ const AdminPage = () => {
         <select
           defaultValue={user.status}
           onChange={(e) => updateStatus(user.id, e.target.value as any)}
+          className="bg-teal-950"
         >
           <option value="active">Active</option>
           <option value="deactive">Deactive</option>
@@ -62,6 +63,7 @@ const AdminPage = () => {
         <select
           value={user.role}
           onChange={(e) => updateUserRole(user.id, e.target.value as UserRole)}
+          className="bg-teal-950"
         >
           <option value="donor">Donor</option>
           <option value="admin">Admin</option>

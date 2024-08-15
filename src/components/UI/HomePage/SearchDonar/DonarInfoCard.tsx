@@ -10,9 +10,9 @@ const DonarInfoCard = ({ donor }: { donor: Donor }) => {
 
   return (
     <>
-      <div className="card card-side shadow-xl text-black">
+      <div className="card card-side shadow-xl text-black flex-col lg:flex-row">
         <figure>
-          <Image src={profileImg} alt="profile" />
+          <Image src={profileImg} alt="profile" className="w-48 h-full" />
         </figure>
         <div className="card-body text-black">
           <h2 className="card-title text-black">

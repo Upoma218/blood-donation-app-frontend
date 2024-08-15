@@ -86,6 +86,7 @@ const DonorPage = () => {
         <select
           defaultValue={request?.requestStatus}
           onChange={(e) => updateStatus(request.id, e.target.value as any)}
+          className=" bg-teal-950"
         >
           <option value="PENDING">PENDING</option>
           <option value="APPROVED">APPROVED</option>

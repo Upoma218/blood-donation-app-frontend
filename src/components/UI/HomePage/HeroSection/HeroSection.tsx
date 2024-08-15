@@ -7,10 +7,10 @@ import SearchButton from "../SearchDonar/SearchButton";
 const HeroSection = () => {
   return (
     <div
-      className="relative hero min-h-screen bg-contain bg-center"
+      className="relative hero bg-contain bg-center"
       style={{ backgroundImage: `url(${bgImg.src})` }}
     >
-      <div className="absolute inset-0 bg-white bg-opacity-90 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-80 backdrop-blur-sm"></div>
 
       <div className="relative hero-content flex-col lg:flex-row-reverse">
         <div className="flex-shrink-0 w-full md:w-1/2">

@@ -49,7 +49,7 @@ const LoginPage = () => {
 
   return (
     <div className=" flex min-h-screen items-center justify-center bg-teal-50 py-6">
-      <div className="max-w-md w-full bg-white shadow-md rounded-md p-8 text-center border-4 border-pink-100">
+      <div className="max-w-md w-full bg-white shadow-md rounded-md p-8 text-center ">
         <h1 className="text-3xl font-semi text-teal-500 bg-white mb-4">
           Login To Donate Blood
         </h1>
@@ -77,7 +77,7 @@ const LoginPage = () => {
             </div>
 
             <p className="text-right mb-4 text-sm">
-              <Link href="/change-password" className="link text-pink-500">
+              <Link href="/change-password" className="link text-teal-500">
                 Want to change password?
               </Link>
             </p>
@@ -90,12 +90,12 @@ const LoginPage = () => {
             </button>
             <p className="text-sm">
               Don&apos;t have an account?{" "}
-              <Link href="/register" className="link text-pink-500">
+              <Link href="/register" className="link text-teal-500">
                 Create an account
               </Link>
             </p>
-            <p className="text-sm text-left bg-slate-200 p-4 my-4">
-              <span className="text-pink-500 font-bold text-md">
+            <p className="text-sm text-left bg-slate-100 p-4 my-4">
+              <span className="text-teal-500 font-bold text-md">
                 You can test the functionalities by using these credintials for
                 different users: <br />
               </span>{" "}

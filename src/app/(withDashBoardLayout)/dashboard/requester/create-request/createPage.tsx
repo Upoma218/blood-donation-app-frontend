@@ -85,7 +85,7 @@ const CreateRequest = () => {
           resolver={zodResolver(requestValidationSchema)}
           defaultValues={defaultValues}
         >
-          <div className="grid grid-cols-1 w-full mb-4 p-6 bg-teal-200">
+          <div className="grid grid-cols-1 w-full mb-4 p-6">
             <div>
               <DBInput
                 name="hospitalName"

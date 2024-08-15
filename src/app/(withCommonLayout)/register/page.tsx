@@ -213,7 +213,7 @@ const RegisterPage = () => {
             </div>
           </div>
           <p className="text-right mb-4 text-sm">
-            <Link href="/change-password" className="link text-pink-500">
+            <Link href="/change-password" className="link text-teal-500">
               Want to change password?
             </Link>
           </p>
@@ -225,7 +225,7 @@ const RegisterPage = () => {
           </button>
           <p className="text-sm">
             Don&apos;t have an account?{" "}
-            <Link href="/login" className="link text-pink-500">
+            <Link href="/login" className="link text-teal-500">
               Create an account
             </Link>
           </p>
