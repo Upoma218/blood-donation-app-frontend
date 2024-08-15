@@ -14,9 +14,9 @@ interface TableProps {
 
 const DBTable: React.FC<TableProps> = ({ columns, data }) => {
   return (
-    <div className="overflow-x-auto w-full min-h-screen">
+    <div className="overflow-x-auto w-full min-h-screen bg-teal-950 text-white">
       <table className="table table-xs">
-        <thead>
+        <thead className="text-white">
           <tr>
             <th></th>
             {columns?.map((column) => (

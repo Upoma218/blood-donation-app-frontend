@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 
 interface DBModalProps {
   id: string;
-  title: string;
+  title?: string;
   content: ReactNode;
-  showModalButtonLabel: string;
+  showModalButtonLabel?: string;
   onClose?: () => void;
 }
 

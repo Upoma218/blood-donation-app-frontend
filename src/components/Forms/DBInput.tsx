@@ -29,7 +29,7 @@ const DBInput = ({
         <div className="form-control">
           {label && (
             <label className="label">
-              <span className="label-text">{label}</span>
+              <span className="label-text text-white">{label}</span>
             </label>
           )}
           <input

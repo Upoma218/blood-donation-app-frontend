@@ -1,142 +1,156 @@
-import DBDatePicker from "@/components/Forms/DBDatePicker";
-import DBForm from "@/components/Forms/DBForm";
-import DBInput from "@/components/Forms/DBInput";
 import { useUpdateMYProfileMutation } from "@/redux/api/userApi";
-import { User } from "@/types";
-import { dateFormatter } from "@/utils/dateFormatter";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from "zod";
-import DBModal from "../Dashboard/DBModal/DBModal";
+import { toast } from "sonner";
 
+// Define the types for the component props
 interface ProfileUpdateModalProps {
-  setOpen: Dispatch<SetStateAction<boolean>>;
+  setOpen: (open: boolean) => void;
   id: string;
-  showModalButtonLabel: string;
-  title: string;
-  defaultValues: User;
+  defaultValues: {
+    phone: string;
+    location: string;
+    bio: string;
+    age: number;
+    lastDonationDate: string;
+  };
 }
-
-export const updateUserProfileSchema = z.object({
-  phone: z
-    .string()
-    .regex(/^\d{11}$/, "Please provide a valid phone number!")
-    .optional(),
-  location: z.string().min(1, "Please enter your address!"),
-  bio: z.string(),
-  age: z
-    .preprocess((x) => (x ? x : undefined), z.coerce.number().int().optional())
-    .optional(),
-  lastDonationDate: z
-    .preprocess(
-      (x) => (x ? x : undefined),
-      z.date().refine((date) => date instanceof Date, {
-        message: "Invalid date format",
-      })
-    )
-    .optional(),
-});
 
 const ProfileUpdateModal: React.FC<ProfileUpdateModalProps> = ({
   setOpen,
   id,
-  showModalButtonLabel,
-  title,
   defaultValues,
 }) => {
-  const [updateMYProfile] = useUpdateMYProfileMutation();
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [users, setUsers] = useState({});
-
-  const { handleSubmit, reset, setValue } = useForm({
-    defaultValues,
-    resolver: zodResolver(updateUserProfileSchema),
+  // Use react-hook-form with the provided defaultValues
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm({
+    defaultValues, // Use default values for the form
   });
+
+  // Reset form when defaultValues change
   useEffect(() => {
-    setUsers(defaultValues);
     reset(defaultValues);
-  }, [reset]);
+    console.log("Default values set:", defaultValues); // Log to verify values are being set
+  }, [defaultValues, reset]);
 
-  console.log(defaultValues);
+  // Update profile mutation hook
+  const [updateProfile] = useUpdateMYProfileMutation();
 
-  const handleFormSubmit: SubmitHandler<any> = async (data) => {
-    data.lastDonationDate = dateFormatter(data.lastDonationDate);
-    data.age = Number(data.age);
+  // Handle form submission
+  const onSubmit: SubmitHandler<typeof defaultValues> = async (data) => {
+    console.log("Form submission started with data:", data); // Log the form data
+
+    // Format the lastDonationDate as a string if it's a Date object
+    const formattedData = {
+      ...data,
+      age: data.age ? Number(data.age) : undefined,
+      lastDonationDate: data.lastDonationDate
+        ? new Date(data.lastDonationDate).toISOString().split("T")[0] // Convert to 'YYYY-MM-DD' format
+        : undefined,
+    };
+
     try {
-      const res = await updateMYProfile({ body: data }).unwrap();
-      console.log(res);
-      if (res?.id) {
-        setIsSuccess(true);
-        reset();
-        setOpen(false);
-      }
+      const result = await updateProfile({ body: formattedData }).unwrap();
+      console.log("Update successful with result:", result); // Log the result
+      toast.success("Profile updated successfully!");
+      setOpen(false); // Close the modal after successful update
     } catch (error) {
-      console.error("Update Error:", error);
+      console.error("Update failed with error:", error); // Log the error
+      toast.error("Failed to update profile. Please try again.");
     }
   };
 
-  const handleCloseModal = () => {
+  // Handle modal closing
+  const handleClose = () => {
     setOpen(false);
   };
 
   return (
-    <DBModal
+    <div
       id={id}
-      title={title}
-      showModalButtonLabel={showModalButtonLabel}
-      onClose={handleCloseModal}
-      content={
-        <div className="text-gray-700">
-          <h1 className="text-3xl font-semibold text-teal-500 my-4">
-            Update Profile
-          </h1>
-          <DBForm onSubmit={handleFormSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-              <DBInput
-                name="location"
-                label="Location"
-                fullWidth
-                className="input input-bordered w-full"
-              />
-              <DBInput
-                name="bio"
-                label="Bio"
-                type="text"
-                fullWidth
-                className="input input-bordered w-full"
-              />
-              <DBInput
-                name="age"
-                label="Age"
-                type="number"
-                fullWidth
-                className="input input-bordered w-full"
-              />
-              <DBDatePicker
-                name="lastDonationDate"
-                label="Last Donation Date"
-                className="w-full"
-              />
-            </div>
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div className="bg-white p-6 rounded shadow-lg w-full max-w-md mx-4 md:mx-0">
+        <h2 className="text-xl font-bold mb-4 text-center text-teal-500">
+          Update Your Profile
+        </h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* Phone Input */}
+          <label className="block mb-4">
+            Phone:
+            <input
+              {...register("phone")}
+              type="text"
+              className="border p-2 rounded w-full"
+            />
+          </label>
+
+          {/* Location Input */}
+          <label className="block mb-4">
+            Location:
+            <input
+              {...register("location")}
+              type="text"
+              className="border p-2 rounded w-full"
+            />
+          </label>
+
+          {/* Bio Input */}
+          <label className="block mb-4">
+            Bio:
+            <input
+              {...register("bio")}
+              type="text"
+              className="border p-2 rounded w-full"
+            />
+          </label>
+
+          {/* Age Input */}
+          <label className="block mb-4">
+            Age:
+            <input
+              {...register("age")}
+              type="number"
+              className="border p-2 rounded w-full"
+            />
+          </label>
+
+          {/* Last Donation Date Input */}
+          <label className="block mb-4">
+            Last Donation Date:
+            <input
+              {...register("lastDonationDate")}
+              type="date"
+              className="border p-2 rounded w-full"
+            />
+          </label>
+
+          <div className="flex justify-end mt-4">
+            {/* Close Button */}
             <button
-              className="btn bg-pink-500 p-3 w-full my-6 font-bold text-white"
-              type="submit"
-              onSubmit={() => {
-                handleSubmit;
-              }}
+              type="button"
+              className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+              onClick={handleClose}
             >
-              Update Profile
+              Close
             </button>
-          </DBForm>
-          {isSuccess && (
-            <p className="text-green-500 mt-2">
-              User profile updated successfully!
-            </p>
-          )}
-        </div>
-      }
-    />
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="bg-teal-500 text-white px-4 py-2 rounded"
+              disabled={isSubmitting} // Disable the button while submitting
+            >
+              {isSubmitting ? "Updating..." : "Save Changes"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
+
 export default ProfileUpdateModal;

@@ -6,17 +6,17 @@ import { useGetMYProfileQuery } from "@/redux/api/userApi";
 import Image from "next/image";
 import { useState } from "react";
 
-const MyProfile = () => {
-  const { data, isLoading } = useGetMYProfileQuery("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+// Define the type for the profile data
 
-  const handleUpdateProfileClick = () => {
-    setIsModalOpen(true);
-  };
+const MyProfile = () => {
+  const { data, isLoading, refetch } = useGetMYProfileQuery("");
+  const [isOpen, setIsOpen] = useState(false);
+
   console.log(isLoading);
+
   return (
-    <div className="w-full bg-red-100 min-h-full">
-      <div className="w-full bg-pink-500 p-6 shadow-xl shadow-rose-200 rounded-none mx-auto">
+    <div className="w-full bg-teal-700 min-h-screen">
+      <div className="w-full bg-teal-950 p-6 shadow-md shadow-zinc-900 rounded-none mx-auto">
         <div className="relative rounded-md mx-auto w-32 h-32 flex justify-center items-center">
           <Image
             src={userImg}
@@ -30,66 +30,72 @@ const MyProfile = () => {
           {data?.name}
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-pink-950 gap-6 p-6">
-        <p className="p-4 bg-white rounded-md">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-white gap-6 p-6">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Email:</span> {data?.email}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Phone:</span> {data?.phone}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Blood Type:</span> {data?.bloodType}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Location:</span> {data?.location}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Donate Blood:</span>{" "}
           {data?.isDonateBlood ? "Yes" : "No"}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Availability:</span>{" "}
           {data?.availability ? "Available" : "Not Available"}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Bio:</span> {data?.userProfile?.bio}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Age:</span> {data?.userProfile?.age}
         </p>
 
-        <p className="p-4 bg-white rounded-md">
+        <p className="p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md">
           <span className="font-semibold">Last Donation Date:</span>{" "}
           {data?.userProfile?.lastDonationDate}
         </p>
       </div>
-      <div
-        className="btn bg-pink-500 p-3 w-full my-6 font-bold text-white"
-        onClick={handleUpdateProfileClick}
-      >
-        {isModalOpen && (
-          <ProfileUpdateModal
-            setOpen={setIsModalOpen}
-            id="updateProfileModal"
-            title="Update Profile"
-            showModalButtonLabel="Update Profile"
-            defaultValues={{
-              phone: data?.phone,
-              location: data?.location,
-              bio: data?.userProfile?.bio,
-              age: data?.userProfile?.age,
-              lastDonationDate: data?.userProfile?.lastDonationDate,
-            }}
-          />
-        )}
+
+      {/* Update Profile button */}
+      <div className="flex justify-center mt-6">
+        <button
+          className="mx-6 p-4 bg-teal-800 shadow-md shadow-zinc-900 rounded-md font-bold text-white w-full"
+          onClick={() => setIsOpen(true)}
+        >
+          Update Profile
+        </button>
       </div>
+
+      {/* Render the modal only when isOpen is true */}
+      {isOpen && data && (
+        <ProfileUpdateModal
+          setOpen={setIsOpen}
+          id="profileUpdateModal"
+          defaultValues={{
+            phone: data.phone,
+            location: data.location,
+            bio: data.userProfile.bio,
+            age: data.userProfile.age,
+            lastDonationDate: data.userProfile.lastDonationDate,
+          }}
+        />
+      )}
     </div>
   );
 };

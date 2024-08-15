@@ -15,14 +15,14 @@ const DashboardDrawer = ({ children }: { children: ReactNode }) => {
   return (
     <div className="drawer lg:drawer-open md:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content  w-full">
+      <div className="drawer-content w-full">
         <label
           htmlFor="my-drawer-2"
           className="btn bg-teal-500 drawer-button lg:hidden absolute top-1 left-1 btn-xs text-white"
         >
           <FaBars size={16} />
         </label>
-        {children}
+        <div className="bg-teal-950 min-h-full"> {children}</div>
       </div>
       <div className="drawer-side">
         <label
@@ -30,7 +30,7 @@ const DashboardDrawer = ({ children }: { children: ReactNode }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-64 min-h-full  bg-pink-200 text-pink-700 font-bold shadow-xl shadow-slate-950">
+        <ul className="menu p-4 w-64 min-h-full bg-gradient-to-br from-teal-600 to-teal-800 text-white font-bold shadow-xl shadow-slate-950">
           {userRole && (
             <>
               <li>

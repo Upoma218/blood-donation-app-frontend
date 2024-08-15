@@ -84,7 +84,9 @@ const RequesterPage = () => {
   return (
     <div className="container mx-auto p-8">
       {isLoading ? (
-        <LoadingButton />
+        <div className="flex items-center justify-center bg-teal-950">
+          <LoadingButton />
+        </div>
       ) : (
         <DBTable columns={columns} data={newData} />
       )}

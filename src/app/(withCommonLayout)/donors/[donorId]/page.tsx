@@ -17,7 +17,7 @@ const DonorDetailsPage = async ({ params }: DonorId) => {
 
     return (
       <div className="m-4">
-        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold mt-4 text-red-600 text-center">
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold my-6 text-teal-500 text-center">
           Details Information About Donor!
         </h1>
         <DonorFullDetails key={donor.id} donor={donor}></DonorFullDetails>

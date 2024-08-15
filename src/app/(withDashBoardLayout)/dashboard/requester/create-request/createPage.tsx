@@ -71,7 +71,7 @@ const CreateRequest = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-pink-100 p-8 w-full">
+    <div className="flex min-h-screen items-center justify-center bg-teal-900 p-8 w-full">
       <div className="max-w-2xl w-full bg-white shadow-md rounded-md p-8 text-center">
         <h1 className="text-3xl font-semibold text-teal-500 bg-white mb-4">
           Create Request for Blood
@@ -85,7 +85,7 @@ const CreateRequest = () => {
           resolver={zodResolver(requestValidationSchema)}
           defaultValues={defaultValues}
         >
-          <div className="grid grid-cols-1 w-full mb-4 p-6">
+          <div className="grid grid-cols-1 w-full mb-4 p-6 bg-teal-200">
             <div>
               <DBInput
                 name="hospitalName"
@@ -133,7 +133,7 @@ const CreateRequest = () => {
                 className="m-2"
               />
               Agree with{" "}
-              <Link href="/terms" className="link text-pink-500">
+              <Link href="/terms" className="link text-teal-500">
                 {" "}
                 Terms And Conditions
               </Link>

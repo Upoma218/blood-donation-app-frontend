@@ -1,6 +1,8 @@
 "use client";
+import profileImg from "@/assets/profile.png";
 import useUserInfo from "@/hooks/useUserInfo";
 import { Donor } from "@/types";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -19,31 +21,32 @@ const DonorFullDetails = ({ donor }: { donor: Donor }) => {
 
   return (
     <div className="p-4 justify-center align-middle">
-      <div className="card m-4 rounded-lg  border-1 border-slate-100 lg:w-1/3 mx-auto ">
-        <div className="card-body rounded-md border-2 border-slate-400 items-left">
-          <h2 className="card-title text-teal-500">General Information</h2>
-
-          <p className="font-bold text-gray-700">
+      <div className="card shadow-xl text-black">
+        <figure>
+          <Image src={profileImg} alt="profile" />
+        </figure>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title">
             Donor Name:{" "}
-            <span className="font-normal text-gray-800">{donor?.name}</span>
-          </p>
-          <p className="font-bold text-gray-700">
+            <span className="font-bold text-gray-800">{donor?.name}</span>
+          </h2>
+          <p>
+            {" "}
             Blood Type:{" "}
             <span className="font-normal text-gray-800">
               {donor?.bloodType}
             </span>
           </p>
-          <p className="font-bold text-gray-700">
-            Location:{" "}
-            <span className="font-normal text-gray-800">{donor?.location}</span>
-          </p>
-          <p className="font-bold text-gray-700">
+          <p>
             Availability Status:{" "}
             <span className="font-normal text-gray-800">
               {availabilityStatus}
             </span>
           </p>
-
+          <p>
+            Location:{" "}
+            <span className="font-normal text-gray-800">{donor?.location}</span>
+          </p>
           <div className="card-actions justify-end">
             {isClient && userInfo?.role === "requester" ? (
               <Link

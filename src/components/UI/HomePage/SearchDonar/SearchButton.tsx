@@ -26,7 +26,7 @@ const SearchButton = () => {
         </label>
         <select
           id="genre"
-          className="select select-bordered join-item"
+          className="select select-bordered join-item text-black"
           onChange={(e) => setFilterType(e.target.value)}
         >
           <option disabled selected>

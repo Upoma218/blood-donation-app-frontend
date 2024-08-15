@@ -29,10 +29,10 @@ const DBDatePicker = ({
       control={control}
       defaultValue={dayjs(new Date().toDateString())}
       render={({ field: { onChange, value, ...field } }) => (
-        <div className={`form-control  ${fullWidth ? "w-full" : "w-auto"}`}>
+        <div className={`form-control ${fullWidth ? "w-full" : "w-auto"}`}>
           {label && (
             <label className="label">
-              <span className="label-text">{label}</span>
+              <span className="label-text text-white">{label}</span>
             </label>
           )}
           <DatePicker
@@ -40,7 +40,7 @@ const DBDatePicker = ({
             onChange={onChange}
             value={value}
             required={required}
-            className={`input input-bordered${
+            className={`input input-bordered bg-teal-900${
               size === "medium" ? "input-md" : "input-sm"
             } ${isError ? "input-error" : ""}`}
           />

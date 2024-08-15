@@ -46,7 +46,7 @@ const TeamInformation = () => {
           a common goal to deliver excellence. Explore the team that's shaping
           the future. Each member is passionate about creating positive change.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8 bg-teal-50 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8 bg-teal-50 py-8 text-black">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="w-32 h-32 rounded-full overflow-hidden relative">

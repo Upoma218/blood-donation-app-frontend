@@ -10,12 +10,12 @@ const DonarInfoCard = ({ donor }: { donor: Donor }) => {
 
   return (
     <>
-      <div className="card card-side shadow-xl">
+      <div className="card card-side shadow-xl text-black">
         <figure>
           <Image src={profileImg} alt="profile" />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">
+        <div className="card-body text-black">
+          <h2 className="card-title text-black">
             Donor Name:{" "}
             <span className="font-bold text-gray-800">{donor?.name}</span>
           </h2>

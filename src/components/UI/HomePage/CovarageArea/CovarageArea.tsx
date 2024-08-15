@@ -135,7 +135,7 @@ const CovarageArea = () => {
       </h1>
 
       <div className="mb-6 mx-auto max-w-6xl text-center px-4">
-        <p>
+        <p className="text-black">
           At our blood donation organization, we are proud to serve communities
           across all districts in Bangladesh. Our comprehensive coverage ensures
           that wherever you are, a blood donor is within reach, ready to make a
