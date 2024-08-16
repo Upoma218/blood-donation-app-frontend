@@ -1,4 +1,4 @@
-import { Donor, DonorStats } from "@/types";
+import { Donor } from "@/types";
 import { IMeta } from "@/types/common";
 import { tagTypes } from "../tagTypes";
 import { baseApi } from "./baseApi";
@@ -18,20 +18,6 @@ export const donorApi = baseApi.injectEndpoints({
           donors: response,
           meta,
         };
-      },
-      providesTags: [tagTypes.donors],
-    }),
-
-    // get donor stats
-    getDonorStats: build.query({
-      query: () => ({
-        url: `/stats`,
-        method: "GET",
-      }),
-      transformResponse: (response: DonorStats) => {
-        console.log({ response });
-
-        return response;
       },
       providesTags: [tagTypes.donors],
     }),
@@ -75,5 +61,4 @@ export const {
   useGetDonorQuery,
   useUpdateDonorMutation,
   useUpdateRequestStatusMutation,
-  useGetDonorStatsMutation,
 } = donorApi;

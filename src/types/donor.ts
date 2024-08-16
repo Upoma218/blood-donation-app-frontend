@@ -72,3 +72,11 @@ export interface AdminStats {
   totalDeactivatedUsers: number;
   totalUnAvailableDonors: number;
 }
+
+export interface UserStatsResponse {
+  totalRequests: number;
+  totalPendingRequests: number;
+  totalApprovedRequests: number;
+  totalRejectedRequests: number;
+  donations: { date: string; count: number }[];
+}

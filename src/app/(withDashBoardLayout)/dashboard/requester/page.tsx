@@ -53,7 +53,7 @@ const columns = [
 ];
 
 const RequesterPage = () => {
-  const { data: requests, isLoading } = useGetAllRequestQuery({});
+  const { data: requests, isLoading, refetch } = useGetAllRequestQuery({});
 
   if (requests?.length <= 0) {
     return (
