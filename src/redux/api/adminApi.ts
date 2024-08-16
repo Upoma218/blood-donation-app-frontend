@@ -12,7 +12,7 @@ export const userApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.user],
     }),
 
-    //get single user
+    // Get single user
     getUser: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `/user/${id}`,
@@ -20,7 +20,8 @@ export const userApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.user],
     }),
-    // update an user
+
+    // Update a user
     updateUser: build.mutation({
       query: (data) => {
         console.log(data);
@@ -32,8 +33,21 @@ export const userApi = baseApi.injectEndpoints({
       },
       invalidatesTags: [tagTypes.user],
     }),
+
+    // Get all admin stats
+    getAllAdminStats: build.query({
+      query: () => ({
+        url: "/stats",
+        method: "GET",
+      }),
+      providesTags: [tagTypes.stats],
+    }),
   }),
 });
 
-export const { useGetAllUsersQuery, useGetUserQuery, useUpdateUserMutation } =
-  userApi;
+export const {
+  useGetAllUsersQuery,
+  useGetUserQuery,
+  useUpdateUserMutation,
+  useGetAllAdminStatsQuery,
+} = userApi;

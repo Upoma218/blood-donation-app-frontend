@@ -5,7 +5,7 @@ import SearchButton from "./SearchButton";
 
 const SearchDonar = async () => {
   const res = await fetch(
-    "https://blood-donation-app-server-two.vercel.app/api/donors",
+    "http://localhost:5000/api/donors",
 
     {
       cache: "no-store",

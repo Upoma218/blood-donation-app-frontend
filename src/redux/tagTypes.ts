@@ -7,6 +7,7 @@ export enum tagTypes {
   requestData = "requestData",
   request = "request",
   status = "status",
+  stats = "stats",
 }
 
 export const tagTypesList = [
@@ -17,4 +18,5 @@ export const tagTypesList = [
   tagTypes.requestData,
   tagTypes.request,
   tagTypes.status,
+  tagTypes.stats,
 ];
