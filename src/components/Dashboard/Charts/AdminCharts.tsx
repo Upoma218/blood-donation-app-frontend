@@ -29,13 +29,13 @@ const AdminCharts = ({ lineData, barData, pieData }: any) => {
   return (
     <div className="space-y-6">
       {/* Charts Container */}
-      <h1 className="text-xl text-white font-bold text-center mb-8">
+      <h1 className="text-xl text-teal-500 font-semibold text-center mb-8">
         User Stats
       </h1>
-      <div className="divider divider-accent"></div>
+
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
         {/* Bar Chart */}
-        <div className="bg-teal-900 p-4 rounded-md border border-1 border-teal-600">
+        <div className="bg-teal-900 p-4 rounded-md shadow-md ">
           <Bar
             data={barData}
             options={{
@@ -47,7 +47,7 @@ const AdminCharts = ({ lineData, barData, pieData }: any) => {
         </div>
 
         {/* Pie Chart */}
-        <div className="bg-teal-900 p-4 rounded-md border border-1 border-teal-600">
+        <div className="bg-teal-900 p-4 rounded-md shadow-md ">
           <Pie
             data={pieData}
             options={{
@@ -65,12 +65,12 @@ const AdminCharts = ({ lineData, barData, pieData }: any) => {
           />
         </div>
       </div>
-      <h1 className="text-xl text-white font-bold text-center my-8">
+      <h1 className="text-xl text-teal-500 font-semibold text-center my-8">
         User Status
       </h1>
-      <div className="divider divider-accent"></div>
+
       {/* Line Chart */}
-      <div className="bg-teal-900 p-4 rounded-md h-full">
+      <div className="bg-teal-900 p-4 rounded-md h-full shadow-md ">
         <Line
           data={lineData}
           options={{

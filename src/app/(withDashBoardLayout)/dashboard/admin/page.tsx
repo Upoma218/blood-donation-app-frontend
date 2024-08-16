@@ -111,7 +111,7 @@ const AdminPage = () => {
         {
           label: "Count",
           data: [stats?.totalUsers, stats?.totalDonors, stats?.totalRequesters],
-          backgroundColor: ["#0D9488", "#14B8A6", "#2DD4BF"],
+          backgroundColor: ["#a4c2f4", "#4a86e8", "#666666"],
         },
       ],
     },
@@ -131,7 +131,7 @@ const AdminPage = () => {
             stats?.totalDeactivatedUsers,
             stats?.totalUnAvailableDonors,
           ],
-          backgroundColor: ["#741b47", "#e06666", "#a2c4c9", "#e6b8af"],
+          backgroundColor: ["#a4c2f4", "#4a86e8", "#134f5c", "#666666"],
         },
       ],
     },
@@ -173,10 +173,10 @@ const AdminPage = () => {
         <LoadingButton />
       ) : (
         <div>
-          <h1 className="text-xl text-white font-bold text-center my-8">
+          <h1 className="text-xl text-teal-500 font-semibold text-center my-8">
             User Details Informations
           </h1>
-          <div className="divider divider-accent"></div>
+
           <DBTable columns={columns} data={newData} />
         </div>
       )}
