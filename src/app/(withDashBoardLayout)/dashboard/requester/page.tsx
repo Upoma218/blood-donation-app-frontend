@@ -3,32 +3,34 @@
 
 import DBTable from "@/components/Dashboard/DBTable/DBTable";
 import LoadingButton from "@/components/UI/Button/LoadingButton";
+import { useGetAllAdminStatsQuery } from "@/redux/api/adminApi";
 import { useGetAllRequestQuery } from "@/redux/api/userApi";
+import {
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  Chart,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+} from "chart.js";
+import { Bar, Line, Pie } from "react-chartjs-2";
 
-/* eslint-disable react/no-unescaped-entities */
-
-/* 
- {
-      id: '082c4563-a13c-4197-a3c8-eef89a74e84e',
-      donorId: '13f750ad-2ddd-4cc9-b8a4-d8a6f3d7a10c',
-      requesterId: '6d1848f0-48c6-4199-a76d-8e52b5841e96',
-      dateOfDonation: '2024-06-13',
-      hospitalName: 'Labaid',
-      hospitalAddress: 'Dhanmondi',
-      reason: 'Fever',
-      requestStatus: 'PENDING',
-      createdAt: '2024-06-08T13:25:28.201Z',
-      updatedAt: '2024-06-08T13:25:28.201Z',
-      donor: {
-        id: '13f750ad-2ddd-4cc9-b8a4-d8a6f3d7a10c',
-        name: 'cccccc',
-        email: 'cccccc@gmail.com',
-        phone: '01742249000',
-        location: 'Dhaka',
-        bloodType: 'AB-',
-        availability: false
-      }
- */
+// Register required components with Chart.js
+Chart.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
 
 const columns = [
   { header: "Name", accessor: "name" },
@@ -54,10 +56,15 @@ const columns = [
 
 const RequesterPage = () => {
   const { data: requests, isLoading, refetch } = useGetAllRequestQuery({});
+  const {
+    data: stats,
+    isLoading: isLoadingStats,
+    refetch: refetchStats,
+  } = useGetAllAdminStatsQuery({});
 
   if (requests?.length <= 0) {
     return (
-      <p className="text-5xl text-center my-12 font-bold text-pink-700">
+      <p className="text-5xl py-20 text-center flex items-center justify-center font-bold text-teal-500">
         You Have No Request
       </p>
     );
@@ -81,14 +88,85 @@ const RequesterPage = () => {
     };
   });
   console.log(requests);
+  const barChartData = {
+    labels: ["Pending", "Approved", "Rejected"],
+    datasets: [
+      {
+        label: "Requests",
+        data: [
+          stats?.totalPendingRequests || 0,
+          stats?.totalApprovedRequests || 0,
+          stats?.totalRejectedRequests || 0,
+        ],
+        backgroundColor: ["#a4c2f4", "#4a86e8", "#666666"],
+      },
+    ],
+  };
+
+  const pieChartData = {
+    labels: ["Total Requests", "Accepted Donations"],
+    datasets: [
+      {
+        data: [stats?.totalRequests || 0, stats?.totalApprovedRequests || 0],
+        backgroundColor: ["#a4c2f4", "#4a86e8"],
+      },
+    ],
+  };
+
+  const lineChartData = {
+    labels:
+      stats?.donations?.map((donation: { date: string }) => donation.date) ||
+      [],
+    datasets: [
+      {
+        label: "Request",
+        data:
+          stats?.donations?.map(
+            (donation: { count: number }) => donation.count
+          ) || [],
+        borderColor: "#1e88e5",
+        fill: false,
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto p-8">
-      {isLoading ? (
-        <div className="flex items-center justify-center bg-teal-950">
-          <LoadingButton />
-        </div>
+      {isLoading || isLoadingStats ? (
+        <LoadingButton />
       ) : (
-        <DBTable columns={columns} data={newData} />
+        <>
+          {/* Charts Section */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-teal-500 text-center mb-6">
+              All Blood Request Statistics
+            </h2>
+            <div className="flex flex-col md:flex-row justify-between gap-6">
+              {/* Bar chart */}
+              <div className="bg-teal-900 p-4 rounded-lg shadow-md w-full md:w-1/2 h-96">
+                <Bar data={barChartData} />
+              </div>
+
+              {/* Pie chart */}
+              <div className="bg-teal-900 p-4 rounded-lg shadow-md w-full md:w-1/2 h-96">
+                <Pie data={pieChartData} />
+              </div>
+            </div>
+
+            {/* Line chart */}
+            <h1 className="text-xl text-teal-500 font-semibold text-center my-8">
+              All Send Request In The Last One Year
+            </h1>
+            <div className="bg-teal-900 p-4 rounded-lg shadow-md w-full mt-6 h-96">
+              <Line data={lineChartData} />
+            </div>
+            {/* Existing table */}
+            <h1 className="text-xl text-teal-500 font-semibold text-center my-8">
+              All Requests To Donors
+            </h1>
+            <DBTable columns={columns} data={newData} />
+          </div>
+        </>
       )}
     </div>
   );

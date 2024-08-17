@@ -53,9 +53,12 @@ const CovarageArea = () => {
   useEffect(() => {
     const fetchDonors = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/donors?limit=1000", {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          "https://blood-donation-app-server-two.vercel.app/api/donors?limit=1000",
+          {
+            cache: "no-store",
+          }
+        );
         const { data } = await res.json();
         setDonors(data);
 

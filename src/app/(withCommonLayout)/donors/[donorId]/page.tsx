@@ -5,7 +5,7 @@ const DonorDetailsPage = async ({ params }: DonorId) => {
   console.log({ params });
   try {
     const res = await fetch(
-      `http://localhost:5000/api/user/${params.donorId}`,
+      `https://blood-donation-app-server-two.vercel.app/api/user/${params.donorId}`,
       {
         cache: "no-store",
       }

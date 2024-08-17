@@ -71,7 +71,7 @@ const DonorPage = () => {
 
   if (requests?.length <= 0) {
     return (
-      <p className="text-5xl text-center my-12 font-bold text-pink-700">
+      <p className="text-5xl py-20 text-center flex items-center justify-center font-bold text-teal-500">
         You Have No Request
       </p>
     );
@@ -125,7 +125,7 @@ const DonorPage = () => {
     labels: ["Total Requests", "Total Donations"],
     datasets: [
       {
-        data: [stats?.totalRequests || 0, stats?.donations?.length || 0],
+        data: [stats?.totalRequests || 0, stats?.totalApprovedRequests || 0],
         backgroundColor: ["#a4c2f4", "#4a86e8"],
       },
     ],
@@ -137,7 +137,7 @@ const DonorPage = () => {
       [],
     datasets: [
       {
-        label: "Donations",
+        label: "Request",
         data:
           stats?.donations?.map(
             (donation: { count: number }) => donation.count
